@@ -196,6 +196,7 @@ jsonText.addEventListener("click", function(){
             }
             jsonDataArray.push(data);
             LimpaCampos();
+            aluno.focus();
         }
         
 });
