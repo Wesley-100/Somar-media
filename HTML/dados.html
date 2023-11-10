@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html style="overflow-x:hidden;" lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar médias</title>
+    <link rel="stylesheet" href="../CSS/estilo.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.23/dist/sweetalert2.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="row mt-5">
+        <div class="form-holder">
+            <div class="form-content" style="text-align: -webkit-center;">
+                <div style="font-family: Arial, Helvetica, sans-serif; color: black;" class="form-items">
+                    
+                    <!-- Cabeçalho -->
+                    <h3 class="text-center">Somatório de notas e médias</h3>
+                    
+                    <!-- Mensagem abaixo do titulo -->
+                    <div style="max-width: 320px; text-align: justify; font-family: Arial, Helvetica, sans-serif; font-size: 15px;" class="alert alert-dark" role="alert">
+                        <font color="black">Preencha todos os campos. Antes de fina- lizar aperte "Novo" para salvar todos os re- sultados.</font>
+                    </div>  
+
+                    <!-- Formulario -->
+                    <div class="card card" style="text-align: -webkit-center;background-color: #ffffffbb;max-width: 350px; border: none;">
+                        <div class="card-body">
+                            <form class="form" novalidate="">
+
+                                <div class="row-md-3">
+                                    <input id="nome" maxlength="30" class="form-control required" autocomplete="off" type="text" name="nome" autocomplete="off" placeholder="Aluno" oninput="finalizar()">
+                                    <span id="cnome">O nome deve conter no minimo 3 caracteres</span>
+                                </div>
+
+                                <div class="row-md-3 mt-3">
+                                    <input id="nota1" class="form-control required" autocomplete="off" type="number" name="nota" placeholder="Nota 1"  oninput="finalizarnota1()">
+                                    <span id="ne1">Nota invalida</span>
+                                </div>
+
+                                <div class="row-md-3 mt-3">
+                                    <input id="nota2" class="form-control required" autocomplete="off" type="number" name="nota" placeholder="Nota 2"  oninput="finalizarnota2()">
+                                    <span id="ne2">Nota invalida</span>
+                                </div>
+
+                                <div class="row-md-3 mt-3">
+                                    <input id="nota3" class="form-control required" autocomplete="off" type="number" name="nota" placeholder="Nota 3" oninput="finalizarnota3()">
+                                    <span id="ne3">Nota invalida</span>
+                                </div>
+
+                                <div class="row-md-3 mt-3">
+                                    <input id="nota4" class="form-control required" autocomplete="off" type="number" name="nota" placeholder="Nota 4" oninput="finalizarnota4()">
+                                    <span id="ne4">Nota invalida</span>
+                                </div>
+
+                                <div class="form-button mt-3 text-center">
+                                    <button id="novo" type="button" class="btn btn-outline-secondary">Novo</button>
+                                    <button id="openModalButton"type="button" class="btn btn-outline-secondary" onclick="bvalidacao()">Finalizar</button>
+                                    <button type="button" class="btn btn-outline-secondary" onclick="tTurma()">Trocar turma</button>
+                                </div>
+
+                                <div class="row mt-5" style="display: block;" id="json-output"></div>
+                            </form> 
+                        </div>   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- MODAL -->
+<div class="modal fade bd-example-modal-lg" id="modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <div id="tabela" id="resultModal" style="display: none;" >
+            <table class="table mt-5">
+                <thead>
+                    <tr>
+                        <th scope="row">Aluno</th>
+                        <th scope="row">Nota 1</th>
+                        <th scope="row">Nota 2</th>
+                        <th scope="row">Nota 3</th>
+                        <th scope="row">Nota 4</th>
+                        <th scope="row">Média</th>
+                    </tr>
+                </thead>
+                <tbody>
+                
+                </tbody>
+            </table>
+            <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Fechar</button>
+
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+    <footer class="rodape position-fixed bottom-0 start-50 translate-middle-x">
+        &copy; 2023. Todos os direitos reservados.
+    </footer>
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="../JavaScript/jscript.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.23/dist/sweetalert2.all.min.js"></script>
+</html>
